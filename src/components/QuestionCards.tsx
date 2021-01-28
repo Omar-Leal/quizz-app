@@ -2,7 +2,7 @@ import React from 'react';
 
 type Props = {
   question: string;
-  answer: string[];
+  answers: string[];
   callback: any;
   userAnswer: any;
   questionNr: number;
@@ -12,7 +12,7 @@ type Props = {
 
 const QuestionCard: React.FC<Props> = ({
     question,
-    answer,
+    answers,
     callback,
     userAnswer,
     questionNr,
@@ -28,16 +28,17 @@ const QuestionCard: React.FC<Props> = ({
 
     <p dangerouslySetInnerHTML={{__html: question }} /> 
       <div>
-        {answer.map(answer => (
-
-           <div>
-              <button 
+        {answers.map((answer) => (
+         
+             
+              <button
+              key={answer} 
               disabled={userAnswer}
               onClick={callback}
               >
                 <span dangerouslySetInnerHTML={{ __html: answer}} />
               </button>
-            </div>  
+            
 
         ))}
       </div>

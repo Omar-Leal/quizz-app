@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import { fetchQuizQuestions } from './API'
 
+// Styles 
+import './styles/main.css'
+
 import QuestionCard from './components/QuestionCards'
 
 //types
-import { QuestionState, Difficulty } from './API';
+import { QuestionState, Difficulty } from './API'
+
+
 
 type AnswerObjet = {
   question: string;
@@ -55,7 +60,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>REACT QUIZ</h1>
+      <h1 className="App__title">REACT QUIZ</h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
       <button className="start"
       onClick={startTrivia}
@@ -65,16 +70,20 @@ const App = () => {
       ) : null}
       {!gameOver ? <p className="score">Score</p> : null}
       {loading ? <p>Loading Question... </p> : null }
+       
+      {!loading && !gameOver && (
 
-      {/* <QuestionCard
-      questionNr={number + 1}
-      totalQuestion={TOTAL_QUESTIONS}
-      question={questions[number].question}
-      answer={questions[number].answers}
-      userAnswer={userAnswers ? userAnswers[number]: undefined}
-      callback={checkAnswer}
-      
-      /> */}
+        <QuestionCard
+        questionNr={number + 1}
+        totalQuestion={TOTAL_QUESTIONS}
+        question={questions[number].question}
+        answers={questions[number].answers}
+        userAnswer={userAnswers ? userAnswers[number]: undefined}
+        callback={checkAnswer}      
+        />  
+
+      )}
+
 
       <button
       className="next" 
