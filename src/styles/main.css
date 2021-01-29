@@ -1,15 +1,17 @@
-/* body {
+body {
   background-image: linear-gradient(to right, #e6e9f0 0%, #eef1f5 100%);
   margin: 0;
   box-sizing: border-box;
 }
 
-.App {
-  border: 1px dotted black;
-  height: 100vh;
-}
-
 .App__title {
   text-align: center;
   font-weight: 800;
-} */
+}
+
+@media screen and (max-width: 480px) {
+  .App {
+    border: 2px dotted violet;
+    height: 100vh;
+  }
+}

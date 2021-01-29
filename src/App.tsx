@@ -11,7 +11,7 @@ import { QuestionsState, Difficulty } from './API'
 
 
 
-type AnswerObjet = {
+export type AnswerObjet = {
   question: string;
   answer: string;
   correct: boolean;
@@ -49,11 +49,35 @@ const App = () => {
   };
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if(!gameOver) {
+      //check the user answer
+      const answer = e.currentTarget.value;
+      // Then, was the answer correct?
+      const correct= questions[number].correct_answer === answer;
+      // add score if the user answer is correct!!!
+      if (correct) setScore((prev) => prev + 1);
 
-  }
+      const answerObjet = {
+        question: questions[number].question,
+        answer, 
+        correct,
+        correctAnswer: questions[number].correct_answer
+      };
+      setUserAnswers((prev) => [...prev, answerObjet]);
+
+    }
+  };
 
   const nextQuestion = () => {
+    
+    //Moving on the last Q if this is not the last
+    const nextQ = number + 1;
 
+        if(nextQ === TOTAL_QUESTIONS) {
+          setGameOver(true);
+        } else {
+          setNumbers(nextQ);
+        }
   }
 
 
@@ -67,11 +91,11 @@ const App = () => {
        START
       </button>
       ) : null}
-      {!gameOver ? <p className="score">Score</p> : null}
+      {!gameOver ? <p className="score">Score: {score} </p> : null}
       {loading ? <p>Loading Question... </p> : null }
        
       {!loading && !gameOver && (
-
+        
         <QuestionCard
         questionNr={number + 1}
         totalQuestion={TOTAL_QUESTIONS}
@@ -91,6 +115,10 @@ const App = () => {
         </button> 
 
       ) :null }
+
+ 
+      
+       
        
 
     </div>
