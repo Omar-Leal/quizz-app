@@ -7,7 +7,7 @@ import './styles/main.css'
 import QuestionCard from './components/QuestionCards'
 
 //types
-import { QuestionState, Difficulty } from './API'
+import { QuestionsState, Difficulty } from './API'
 
 
 
@@ -22,7 +22,7 @@ const TOTAL_QUESTIONS:number = 10;
 
 const App = () => {
   const [ loading, setLoading ] = useState(false);
-  const [ questions, setQuestions ] = useState<QuestionState[]>([]);
+  const [ questions, setQuestions ] = useState<QuestionsState[]>([]);
   const [ number, setNumbers ] = useState(0);
   const [ userAnswers, setUserAnswers ] = useState<AnswerObjet[]>([]);
   const [ score, setScore ] = useState(0);
@@ -38,7 +38,6 @@ const App = () => {
         TOTAL_QUESTIONS,
         Difficulty.EASY
       );
-
 
       setQuestions(newQuestions);
       setScore(0);
@@ -84,12 +83,15 @@ const App = () => {
 
       )}
 
+      {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ?   (
+        <button
+        className="next" 
+        onClick={nextQuestion}>      
+          Next Question
+        </button> 
 
-      <button
-      className="next" 
-      onClick={nextQuestion}>      
-        Next Question
-      </button>  
+      ) :null }
+       
 
     </div>
   );
