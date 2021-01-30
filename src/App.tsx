@@ -5,6 +5,7 @@ import { fetchQuizQuestions } from './API'
 import './styles/main.css'
 
 import QuestionCard from './components/QuestionCards'
+import Loader from './components/Loader'
 
 //types
 import { QuestionsState, Difficulty } from './API'
@@ -94,7 +95,7 @@ const App = () => {
       </button>
       ) : null}
       {!gameOver ? <h2 className="score">Score: {score} </h2> : null}
-      {loading ? <p>Loading Question... </p> : null }
+      {loading ? <p> <Loader /> </p> : null }
       </div> 
        
       {!loading && !gameOver && (
