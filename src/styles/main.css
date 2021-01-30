@@ -20,6 +20,8 @@ body {
     height: 100vh;
     padding-left: 10px;
     padding-right: 10px;
+    position: relative;
+    z-index: 1;
   }
 
   .App__main {
@@ -51,12 +53,13 @@ body {
   }
 
   .questionCards__container {
-    border-radius: 20% 20% 5% 5%;
+    border-radius: 24% 24% 8% 8%;
     position: relative;
     background-color: #fdfaf9;
     width: 100%;
-    height: 77vh;
-    padding-top: 8%;
+    height: 80%;
+    padding-top: 3%;
+    padding-bottom: 24%;
   }
 
   .question__card {
@@ -83,6 +86,28 @@ body {
     line-height: 1;
     margin: 20px;
     padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .next__container {
+    border: 1px dashed black;
+  }
+
+  .next {
+    height: 50px;
+    width: 40%;
+    background-color: #eae9fa;
+    border: none;
+    border-radius: 1rem;
+    color: #12121d;
+    cursor: pointer;
+
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
