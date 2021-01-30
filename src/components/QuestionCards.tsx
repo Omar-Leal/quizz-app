@@ -25,16 +25,20 @@ const QuestionCard: React.FC<Props> = ({
 
 
     <div>
-      <p className="number">
-        Question: {questionNr} / {totalQuestion}
-      </p>
+      <div className="questions__container">
+            <h3 className="number">
+              Question: {questionNr} / {totalQuestion}
+            </h3>
+            <p className="question__card" dangerouslySetInnerHTML={{__html: question }} /> 
 
-    <p dangerouslySetInnerHTML={{__html: question }} /> 
-      <div>
+      </div>  
+
+      <div className="questionCards__container">
         {answers.map((answer, showAnswers) => (        
              
-              <div key={showAnswers} >
-                   <button      
+              <div key={showAnswers} className="questionCards__container--wrapper">
+                   <button
+                   className="questionCards__buttons"      
                     disabled={userAnswer ? true: false}
                     value={answer}
                     onClick={callback}
@@ -46,7 +50,7 @@ const QuestionCard: React.FC<Props> = ({
             
 
         ))}
-        { console.log(answers)}
+        
       </div>
     </div>
 

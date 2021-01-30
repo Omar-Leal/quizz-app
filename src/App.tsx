@@ -28,7 +28,7 @@ const App = () => {
   const [ score, setScore ] = useState(0);
   const [ gameOver, setGameOver ] = useState(true);
 
-  console.log(questions);
+ 
 
   const startTrivia = async () => {
       setLoading(true);
@@ -49,12 +49,11 @@ const App = () => {
   };
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if(!gameOver) {
-      //check the user answer
-      const answer = e.currentTarget.value;
-      // Then, was the answer correct?
-      const correct= questions[number].correct_answer === answer;
-      // add score if the user answer is correct!!!
+    const answer = e.currentTarget.value;      
+    const correct= questions[number].correct_answer === answer;      
+
+    if(!gameOver) {     
+      
       if (correct) setScore((prev) => prev + 1);
 
       const answerObjet = {
@@ -63,26 +62,29 @@ const App = () => {
         correct,
         correctAnswer: questions[number].correct_answer
       };
-      setUserAnswers((prev) => [...prev, answerObjet]);
+      setUserAnswers((prev) => [...prev, answerObjet]);     
 
-    }
+    } 
   };
 
-  const nextQuestion = () => {
-    
-    //Moving on the last Q if this is not the last
+  const nextQuestion = () => {   
+       
     const nextQ = number + 1;
 
-        if(nextQ === TOTAL_QUESTIONS) {
+        if (nextQ === TOTAL_QUESTIONS) {
           setGameOver(true);
         } else {
           setNumbers(nextQ);
         }
+
+
   }
 
+ 
 
   return (
     <div className="App">
+      <div className="App__main">
       <h1 className="App__title">REACT QUIZ</h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
       <button className="start"
@@ -91,8 +93,9 @@ const App = () => {
        START
       </button>
       ) : null}
-      {!gameOver ? <p className="score">Score: {score} </p> : null}
+      {!gameOver ? <h2 className="score">Score: {score} </h2> : null}
       {loading ? <p>Loading Question... </p> : null }
+      </div> 
        
       {!loading && !gameOver && (
         
@@ -107,16 +110,27 @@ const App = () => {
 
       )}
 
-      {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ?   (
-        <button
-        className="next" 
-        onClick={nextQuestion}>      
-          Next Question
-        </button> 
+      {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ?         
+          ( <div>
+                <button
+                  className="next" 
+                  onClick={nextQuestion}>                           
+                  Next Question
+                </button>          
+          </div>
 
-      ) :null }
+          ) :null } 
+      
 
- 
+
+
+
+      
+
+  
+             
+
+        
       
        
        
