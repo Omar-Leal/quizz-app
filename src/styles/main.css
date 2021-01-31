@@ -2,6 +2,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: rgb(126, 137, 253);
 }
 
 .App__title {
@@ -9,7 +10,14 @@ body {
   font-weight: 800;
 }
 
-@media screen and (max-width: 780px) {
+/* .questionCards__buttons:hover {
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  color: #fdfaf9;
+  box-shadow: 0 0 40px 40px #7e89fd inset;
+  background-color: transparent;
+} */
+
+@media screen and (max-width: 980px) {
   .App {
     background-color: rgb(126, 137, 253);
     height: 100vh;
@@ -22,7 +30,7 @@ body {
   .App__main {
     width: 100%;
     color: #fdfaf9;
-    height: 8.125rem;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,25 +44,24 @@ body {
     align-items: center;
     font-size: 18px;
     color: #fdfaf9;
-    margin-bottom: 20px;
+  }
+
+  .score {
+    text-align: center;
+    font-size: 3rem;
   }
 
   .number {
     margin-bottom: 20px;
   }
 
-  .score {
-    text-align: center;
-  }
-
   .questionCards__container {
-    border-radius: 24% 24% 8% 8%;
+    border-radius: 16% 16% 8% 8%;
     position: relative;
-    background-color: #fdfaf9;
+
     width: 100%;
-    height: 80%;
+    height: 30rem;
     padding-top: 3%;
-    padding-bottom: 24%;
   }
 
   .question__card {
@@ -87,18 +94,120 @@ body {
   }
 
   .next__container {
-    border: 1px dashed black;
+    position: relative;
+    bottom: 70px;
+    right: -30%;
   }
 
   .next {
-    height: 50px;
+    height: 3.125rem;
     width: 40%;
-    background-color: #eae9fa;
+    background-color: #ee7f6c;
     border: none;
     border-radius: 1rem;
     color: #12121d;
     cursor: pointer;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+  }
+}
 
+@media screen and (max-width: 480px) {
+  .App {
+    background-color: #7e89fd;
+    height: 100vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .App__main {
+    width: 100%;
+    color: #fdfaf9;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .questions__container {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #fdfaf9;
+  }
+
+  .score {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .number {
+    margin-bottom: 20px;
+  }
+
+  .questionCards__container {
+    border-radius: 16% 16% 8% 8%;
+    position: relative;
+    background-color: #fdfaf9;
+    width: 100%;
+    height: 30rem;
+    padding-top: 3%;
+  }
+
+  .question__card {
+    width: 80%;
+    text-align: center;
+  }
+
+  .questionCards__container--wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .questionCards__buttons {
+    appearance: none;
+    width: 80%;
+    background-color: #eae9fa;
+    border: none;
+    border-radius: 2rem;
+    color: #12121d;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .next__container {
+    position: relative;
+    bottom: 70px;
+    right: -30%;
+  }
+
+  .next {
+    height: 3.125rem;
+    width: 40%;
+    background-color: #ee7f6c;
+    border: none;
+    border-radius: 1rem;
+    color: #12121d;
+    cursor: pointer;
     justify-content: center;
     font-size: 1rem;
     font-weight: 400;
