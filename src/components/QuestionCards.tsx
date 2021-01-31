@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AnswerObjet } from '../App'
+import { AnswerObjet } from '../pages/Home'
 
 
 type Props = {

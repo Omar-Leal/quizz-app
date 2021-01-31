@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { fetchQuizQuestions } from './API'
+import { fetchQuizQuestions } from '../API'
 
 // Styles 
-import './styles/main.css'
+import '../styles/main.css'
 
-import QuestionCard from './components/QuestionCards'
-import Loader from './components/Loader'
+import QuestionCard from '../components/QuestionCards'
+import Loader from '../components/Loader'
 
 //types
-import { QuestionsState, Difficulty } from './API'
+import { QuestionsState, Difficulty } from '../API'
 
 
 
@@ -21,7 +21,7 @@ export type AnswerObjet = {
 
 const TOTAL_QUESTIONS:number = 10;
 
-const App = () => {
+const Home = () => {
   const [ loading, setLoading ] = useState(false);
   const [ questions, setQuestions ] = useState<QuestionsState[]>([]);
   const [ number, setNumbers ] = useState(0);
@@ -68,8 +68,7 @@ const App = () => {
     } 
   };
 
-  const nextQuestion = () => {   
-       
+  const nextQuestion = () => {          
     const nextQ = number + 1;
 
         if (nextQ === TOTAL_QUESTIONS) {
@@ -78,20 +77,17 @@ const App = () => {
           setNumbers(nextQ);
         }
 
-
   }
-
- 
 
   return (
     <div className="App">
       <div className="App__main">
-      <h1 className="App__title">REACT QUIZ</h1>
+      
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
       <button className="start"
       onClick={startTrivia}
       >
-       START
+       START.
       </button>
       ) : null}
       {!gameOver ? <h2 className="score">Score: {score} </h2> : null}
@@ -127,4 +123,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Home;

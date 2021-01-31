@@ -1,0 +1,16 @@
+.header__container {
+  background-color: rgb(126, 137, 253);
+  color: #fdfaf9;
+  height: 70px;
+  height: 5.125rem;
+}
+
+.header__container--title {
+  height: inherit;
+  line-height: 5.125rem;
+  text-align: center;
+}
+.header__link {
+  text-decoration: none;
+  color: #fdfaf9;
+}
