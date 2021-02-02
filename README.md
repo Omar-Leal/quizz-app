@@ -1,7 +1,7 @@
 # A QUIZZ APP PROJECT IN REACT JS AND TYPESCRIP
 
 ## STACKE USED:
-- TypeScrip & TSX
+- TypeScript & TSX
 - React JS
 - React Hook
 - A public API
