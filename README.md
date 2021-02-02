@@ -7,7 +7,7 @@
 - A public API
 - CSS
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 
 ## Available Scripts
