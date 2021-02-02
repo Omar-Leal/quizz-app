@@ -1,6 +1,6 @@
 # A QUIZZ APP PROJECT IN REACT JS AND TYPESCRIP
 
-## STACKE USED:
+## STACK USED:
 - TypeScript & TSX
 - React JS
 - React Hook
