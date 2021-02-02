@@ -1,6 +1,14 @@
+# A QUIZZ APP PROJECT IN REACT JS AND TYPESCRIP
+
+## STACKE USED:
+- TypeScrip & TSX
+- React JS
+- React Hook
+- A public API
+- CSS
+
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
