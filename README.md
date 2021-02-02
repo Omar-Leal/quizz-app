@@ -4,6 +4,7 @@
 - TypeScript & TSX
 - React JS
 - React Hook
+- React Router
 - A public API
 - CSS
 
