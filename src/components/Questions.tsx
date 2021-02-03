@@ -32,8 +32,8 @@ const Questions = () => {
  
 
   const startTrivia = async () => {
+    setGameOver(false);
       setLoading(true);
-      setGameOver(false);
 
       const newQuestions = await fetchQuizQuestions(
         TOTAL_QUESTIONS,
@@ -72,12 +72,15 @@ const Questions = () => {
     const nextQ = number + 1;
 
       if (nextQ === TOTAL_QUESTIONS) {
-        setGameOver(true);
+        
+        setGameOver(true);        
       } else {
         setNumbers(nextQ);
       }
 
   }
+
+   console.log(gameOver);
 
   return (
     <div className="App">
@@ -111,9 +114,15 @@ const Questions = () => {
                   Next Question
                 </button>         
             </div>
-          ) :null } 
+          ) : null}   
+
+               
+          
+          
+      
+      
              
-       
+             
 
     </div>
   );

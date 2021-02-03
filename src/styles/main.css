@@ -17,6 +17,71 @@ body {
   background-color: transparent;
 } */
 
+@media screen and (max-width: 1440px) {
+  .App {
+    border: 1px dashed black;
+    height: 100vh;
+  }
+
+  .App__main {
+    width: 100%;
+    color: #fdfaf9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .score {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .questions__container {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #fdfaf9;
+    border: 1px dashed black;
+  }
+
+  .questionCards__container {
+    border-radius: 40px;
+    position: relative;
+    border: 1px dashed black;
+    width: 100%;
+    height: 22rem;
+    padding-top: 1%;
+  }
+
+  .questionCards__container--wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .questionCards__buttons {
+    appearance: none;
+    width: 40%;
+    background-color: #eae9fa;
+    border: none;
+    border-radius: 2rem;
+    color: #12121d;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
 @media screen and (max-width: 980px) {
   .App {
     background-color: rgb(126, 137, 253);
@@ -156,7 +221,7 @@ body {
   }
 
   .questionCards__container {
-    border-radius: 16% 16% 8% 8%;
+    border-radius: 40px;
     position: relative;
     background-color: #fdfaf9;
     width: 100%;
