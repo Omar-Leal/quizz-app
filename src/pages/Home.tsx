@@ -7,8 +7,8 @@ import '../styles/main.css'
 
 function Home () {
   return (
-     <div>
-       <Link className="button__start" to="/questions">
+     <div className="start__container">
+       <Link className="start__button" to="/questions">
         <button>Start</button>     
        </Link>
      </div>

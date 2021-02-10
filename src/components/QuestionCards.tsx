@@ -36,8 +36,8 @@ const QuestionCard: React.FC<Props> = ({
       <div className="questionCards__container">
         {answers.map((answer, showAnswers) => (        
              
-              <div key={showAnswers} className="questionCards__container--wrapper">
-                   <button
+              
+                   <button key={showAnswers} 
                    className="questionCards__buttons"      
                     disabled={userAnswer ? true: false}
                     value={answer}
@@ -46,7 +46,7 @@ const QuestionCard: React.FC<Props> = ({
                     <span dangerouslySetInnerHTML={{ __html: answer }} />
                    
                     </button>
-              </div>
+              
             
 
         ))}

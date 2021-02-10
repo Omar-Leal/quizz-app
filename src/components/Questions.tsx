@@ -6,6 +6,7 @@ import '../styles/main.css'
 
 import QuestionCard from '../components/QuestionCards'
 import Loader from '../components/Loader'
+import Home from '../pages/Home'
 
 //types
 import { QuestionsState, Difficulty } from '../API'
@@ -90,7 +91,7 @@ const Questions = () => {
         startTrivia()
       ) : null}
       {!gameOver ? <h2 className="score">Score: {score} </h2> : null}
-      {loading ? <p> <Loader /> </p> : null }
+      {loading ? <p className="loader"> <Loader /> </p> : null }
       </div> 
        
       {!loading && !gameOver && (
@@ -114,10 +115,14 @@ const Questions = () => {
                   Next Question
                 </button>         
             </div>
-          ) : null}   
+          ) : null }   
 
-               
-          
+              
+      {userAnswers.length === 10 ? (
+        <div>
+          <h1>START</h1>
+        </div>
+      ) : null}
           
       
       
