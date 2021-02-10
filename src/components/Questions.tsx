@@ -74,7 +74,8 @@ const Questions = () => {
 
       if (nextQ === TOTAL_QUESTIONS) {
         
-        setGameOver(true);        
+        setGameOver(true); 
+            
       } else {
         setNumbers(nextQ);
       }
@@ -105,7 +106,7 @@ const Questions = () => {
         callback={checkAnswer}      
         />  
 
-      )}
+      ) }
 
       {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ?         
           ( <div className="next__container">
@@ -118,11 +119,7 @@ const Questions = () => {
           ) : null }   
 
               
-      {userAnswers.length === 10 ? (
-        <div>
-          <h1>START</h1>
-        </div>
-      ) : null}
+     
           
       
       
