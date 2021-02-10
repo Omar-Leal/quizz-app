@@ -1,15 +1,15 @@
 # A QUIZZ APP PROJECT IN REACT JS AND TYPESCRIP
 
 ## STACK USED:
+
 - TypeScript & TSX
 - React JS
 - React Hook
 - React Router
 - A public API
-- CSS
+- CSS Grid Layout
 
 ## Getting Started with Create React App
-
 
 ## Available Scripts
 
